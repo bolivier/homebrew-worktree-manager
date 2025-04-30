@@ -10,6 +10,10 @@ class WorktreeManager < Formula
   def install
     libexec.install "src"
     bin.install "bin/wtm"
+
+    bash_completion.install "resources/autocomplete/wtm-completion.bash" => "wtm"
+    zsh_completion.install  "resources/autocomplete/wtm-completion.zsh"  => "_wtm"
+    fish_completion.install "resources/autocomplete/wtm.fish"
   end
 
   test do
