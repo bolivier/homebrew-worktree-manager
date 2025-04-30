@@ -10,11 +10,10 @@ class WorktreeManager < Formula
   depends_on "babashka"
 
   def install
-    bin.install "worktree-manager" # your shell script or bb script
-    bin.alias "wtm"
+    bin.install "bin/wtm"
   end
 
   test do
-    system "#{bin}/worktree-manager", "--help"
+    system "#{bin}/wtm", "--help"
   end
 end
