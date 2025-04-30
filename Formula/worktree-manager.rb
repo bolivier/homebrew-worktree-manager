@@ -10,6 +10,7 @@ class WorktreeManager < Formula
   depends_on "babashka"
 
   def install
+    libexec.install "src"
     bin.install "bin/wtm"
   end
 
