@@ -5,7 +5,7 @@ class WorktreeManager < Formula
   sha256 "__SHA__"
   license "MIT"
 
-  depends_on "babashka"
+  depends_on "borkdude/brew/babashka"
 
   def install
     libexec.install "src"
