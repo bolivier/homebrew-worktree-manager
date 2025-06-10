@@ -1,19 +1,36 @@
 class WorktreeManager < Formula
   desc "A CLI tool for managing Git worktrees"
   homepage "https://github.com/bolivier/worktree-manager"
-  url "https://github.com/bolivier/worktree-manager/releases/download/v1.0.1/worktree-manager.tar.gz"
-  sha256 "82aed39c5fc8f73f4b6d9ac03e7b1a767ad7248f2da54538bd88f05b6954cdcf"
+  url "https://github.com/bolivier/worktree-manager/releases/download/v1.1.5/worktree-manager.tar.gz"
+  sha256 "855a38609fbea37968c865505056ee47b296b2488605fede4b58cbf8493b8ddd"
   license "MIT"
 
   depends_on "borkdude/brew/babashka"
+  depends_on "fzf"
 
   def install
     libexec.install "src"
     bin.install "bin/wtm"
 
+    (share/"wtm").install "resources/shell-integration/wtm.fish", "resources/shell-integration/wtm.bash", "resources/shell-integration/wtm.zsh"
+
     bash_completion.install "resources/autocomplete/wtm-completion.bash" => "wtm"
     zsh_completion.install  "resources/autocomplete/wtm-completion.zsh"  => "_wtm"
     fish_completion.install "resources/autocomplete/wtm.fish"
+
+    puts "In order to use the `switch` command you'll need to add the wtm function to your shell like this:
+# ~/.bashrc or ~/.bash_profile
+source $(brew --prefix)/share/wtm/wtm.bash
+
+# ~/.zshrc
+source $(brew --prefix)/share/wtm/wtm.zsh
+
+# Fish
+# Create a symlink or use `source` in config.fish
+ln -s (brew --prefix)/share/wtm/wtm.fish ~/.config/fish/functions/wtm.fish
+# OR
+source (brew --prefix)/share/wtm/wtm.fish
+"
   end
 
   test do
