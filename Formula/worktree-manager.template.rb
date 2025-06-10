@@ -17,8 +17,11 @@ class WorktreeManager < Formula
     bash_completion.install "resources/autocomplete/wtm-completion.bash" => "wtm"
     zsh_completion.install  "resources/autocomplete/wtm-completion.zsh"  => "_wtm"
     fish_completion.install "resources/autocomplete/wtm.fish"
+  end
 
-    puts "In order to use the `switch` command you'll need to add the wtm function to your shell like this:
+  def caveats
+    <<~EOS
+In order to use the `switch` command you'll need to add the wtm function to your shell like this:
 # ~/.bashrc or ~/.bash_profile
 source $(brew --prefix)/share/wtm/wtm.bash
 
@@ -30,7 +33,7 @@ source $(brew --prefix)/share/wtm/wtm.zsh
 ln -s (brew --prefix)/share/wtm/wtm.fish ~/.config/fish/functions/wtm.fish
 # OR
 source (brew --prefix)/share/wtm/wtm.fish
-"
+  EOS
   end
 
   test do
