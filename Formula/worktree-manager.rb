@@ -1,8 +1,8 @@
 class WorktreeManager < Formula
   desc "A CLI tool for managing Git worktrees"
   homepage "https://github.com/bolivier/worktree-manager"
-  url "https://github.com/bolivier/worktree-manager/releases/download/v1.1.1/worktree-manager.tar.gz"
-  sha256 "a52d176906ce35cf2436bd2d4d25b28e6c46df50834b3dabddfbcf90b174f6d4"
+  url "https://github.com/bolivier/worktree-manager/releases/download/v1.1.2/worktree-manager.tar.gz"
+  sha256 "8d5b110f343f6512fdf53f74a3da9a02cf563967c217f66fbdaaecfd15d4b8dc"
   license "MIT"
 
   depends_on "borkdude/brew/babashka"
