@@ -11,6 +11,7 @@ class WorktreeManager < Formula
 
   def install
     libexec.install "src"
+    libexec.install "bb.edn"
     bin.install "bin/wtm"
 
     (share/"wtm").install "resources/shell-integration/wtm.fish", "resources/shell-integration/wtm.bash", "resources/shell-integration/wtm.zsh"
