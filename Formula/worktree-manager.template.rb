@@ -7,6 +7,7 @@ class WorktreeManager < Formula
 
   depends_on "borkdude/brew/babashka"
   depends_on "fzf"
+  depends_on "gum"
 
   def install
     libexec.install "src"
