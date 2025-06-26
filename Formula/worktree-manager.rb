@@ -1,15 +1,17 @@
 class WorktreeManager < Formula
   desc "A CLI tool for managing Git worktrees"
   homepage "https://github.com/bolivier/worktree-manager"
-  url "https://github.com/bolivier/worktree-manager/releases/download/v1.1.4/worktree-manager.tar.gz"
-  sha256 "6cdfe30287d497ad151daf0e26cdff8c4e4f9a42d7cd204d903d35097eb65296"
+  url "https://github.com/bolivier/worktree-manager/releases/download/v1.1.5/worktree-manager.tar.gz"
+  sha256 "6a0ade7c86d495ffb47fead675bb19f0b885ed2780b337825a8396a0746c7aa1"
   license "MIT"
 
   depends_on "borkdude/brew/babashka"
   depends_on "fzf"
+  depends_on "gum"
 
   def install
     libexec.install "src"
+    libexec.install "bb.edn"
     bin.install "bin/wtm"
 
     (share/"wtm").install "resources/shell-integration/wtm.fish", "resources/shell-integration/wtm.bash", "resources/shell-integration/wtm.zsh"
